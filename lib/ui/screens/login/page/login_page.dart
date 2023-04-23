@@ -1,3 +1,4 @@
+import 'package:coreinvent/core/extension/localizations.dart';
 import 'package:coreinvent/di/app_di.dart';
 import 'package:coreinvent/routes.dart';
 import 'package:coreinvent/ui/screens/login/bloc/login_bloc.dart';
@@ -18,7 +19,7 @@ class LoginPage extends StatelessWidget {
         appBar: const CustomAppBar(),
         body: BlocListener<LoginBloc, LoginState>(
           listener: (context, state) {
-            if(state.status.isSuccess) {
+            if (state.status.isSuccess) {
               context.pushReplacement(RoutePath.home());
             }
           },
@@ -55,19 +56,19 @@ class LoginLayout extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              '¡Hola!',
-              style: TextStyle(fontSize: 20),
+            Text(
+              context.localizations.hello,
+              style: const TextStyle(fontSize: 20),
             ),
             const SizedBox(height: 10),
-            const Text(
-              'Utiliza tus credenciales de usuario para acceder al sistema',
-              style: TextStyle(fontSize: 14),
+            Text(
+              context.localizations.description_credentials,
+              style: const TextStyle(fontSize: 14),
             ),
             const _Language(),
             const SizedBox(height: 30),
             CustomTextFormField(
-              label: 'correo electrónico',
+              label: context.localizations.email,
               error: error,
               onChanged: (value) {
                 context.read<LoginBloc>().add(LoginEmailChanged(value));
@@ -75,7 +76,7 @@ class LoginLayout extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             CustomTextFormField(
-              label: 'contraseña',
+              label: context.localizations.password,
               error: error,
               onChanged: (value) {
                 context.read<LoginBloc>().add(LoginPasswordChanged(value));
@@ -83,22 +84,22 @@ class LoginLayout extends StatelessWidget {
             ),
             if (error) ...[
               const SizedBox(height: 10),
-              const Text(
-                'credenciales de usuario incorrectas',
-                style: TextStyle(fontSize: 10, color: Colors.red),
+              Text(
+                context.localizations.error_credentials,
+                style: const TextStyle(fontSize: 10, color: Colors.red),
               ),
             ],
             const SizedBox(height: 20),
             TextButton(
               onPressed: () {},
-              child: const Text(
-                '¿Has olvidado tu contraseña?',
-                style: TextStyle(color: Colors.blue),
+              child: Text(
+                context.localizations.forgot_pass,
+                style: const TextStyle(color: Colors.blue),
               ),
             ),
-            const Text(
-              'Si no desipones de una cuenta de usuario o tienes problemas para acceder, ponte en contacto con tu administrador',
-              style: TextStyle(fontSize: 10),
+            Text(
+              context.localizations.info_account,
+              style: const TextStyle(fontSize: 10),
             ),
             const SizedBox(height: 15),
             SizedBox(
@@ -109,9 +110,9 @@ class LoginLayout extends StatelessWidget {
                 onPressed: () {
                   context.read<LoginBloc>().add(const AuthenticationChanged());
                 },
-                child: const Text(
-                  'Acceder',
-                  style: TextStyle(color: Colors.white),
+                child: Text(
+                  context.localizations.sign_in,
+                  style: const TextStyle(color: Colors.white),
                 ),
               ),
             ),

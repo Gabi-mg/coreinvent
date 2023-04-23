@@ -37,7 +37,7 @@ class App extends StatelessWidget {
       ],
       supportedLocales: const [
         Locale('es', ''), //Spanish
-        // Locale('en', ''), //English
+        Locale('en', ''), //English
       ],
       title: 'Coreinvent',
     );
