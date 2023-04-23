@@ -4,11 +4,11 @@
   "description_credentials": "Utiliza tus credenciales de usuario para acceder al sistema",
   "change": "Cambiar",
   "spanish": "Español",
-  "english" : "English"
+  "english" : "English",
   "email": "correo electrónico",
   "password": "contraseña",
   "error_credentials" : "credenciales de usuario incorrectas",
-  "forgot_pass" : "¿Has olvidado tu contraseña?"
-  "info_account" : "Si no dispones de una cuenta de usuario o tienes problemas para acceder ponte en contacto con tu administrador"
-  "sign in" : "Acceder"
+  "forgot_pass" : "¿Has olvidado tu contraseña?",
+  "info_account" : "Si no dispones de una cuenta de usuario o tienes problemas para acceder ponte en contacto con tu administrador",
+  "sign_in" : "Acceder"
 }
