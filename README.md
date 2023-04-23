@@ -1,6 +1,6 @@
 # coreinvent
 
-Para contruir la app hay que ejecutar los siguientes 
+Para construir la app hay que ejecutar los siguientes 
 pasos en la terminal:
 
 * flutter clean
